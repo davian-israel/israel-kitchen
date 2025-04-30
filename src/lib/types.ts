@@ -6,4 +6,11 @@ export interface Product {
     slug: string;
     image: string;
     category?: string;
+    brand?: string;
+    rating?: number;
+    numReviews?: number;
+    stock?: number;
+    isFeatured?: boolean;
+    banner?: string;    
+    images?: string[];          
 } 
