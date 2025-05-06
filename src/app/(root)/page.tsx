@@ -4,7 +4,7 @@ import { sampleData } from "@/db/sampleData";
 const Homepage = () => {
   return ( 
     <>
-      <ProductList data={sampleData} title='Newest Arrival' />
+      <ProductList data={sampleData} title='Latest Arrival' />
     </> 
   );
 }
