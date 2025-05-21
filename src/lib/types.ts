@@ -4,7 +4,7 @@ export interface Product {
     description: string;
     price: number;
     slug: string;
-    image: string;
+    images: string[];
     category?: string;
     brand?: string;
     rating?: number;
@@ -12,5 +12,21 @@ export interface Product {
     stock?: number;
     isFeatured?: boolean;
     banner?: string;    
-    images?: string[];          
 } 
+
+export interface Category {
+    id: string;
+    name: string;
+    description: string;
+    image: string;
+    slug: string;
+}   
+
+export interface Brand {
+    id: string;
+    name: string;
+    description: string;
+    image: string;
+    slug: string;
+}   
+

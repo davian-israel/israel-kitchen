@@ -3,23 +3,21 @@ import Image from "next/image";
 import { Product } from "@/lib/types";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
-type Props = {
-    product: Product;
-}
-export const ProductCard = ({ product }: Props) => {
-    return ( <Card className="w-full max-w-sm">
+
+export const ProductCard = ({ product }: { product: Product; }) => {
+    return (<Card className="w-full max-w-sm">
         <CardHeader className="p-0 items-center">
             <Link href={`/products/${product.slug}`}>
-                <Image 
-                src={product.image} 
-                alt={product.name} 
-                width={300} 
-                height={300} 
-                priority={true}
+                <Image
+                    src={product.images[0]}
+                    alt={product.name}
+                    width={300}
+                    height={300}
+                    priority={true}
                 />
             </Link>
         </CardHeader>
-        <CardContent>
+        <CardContent className="p-4 grid gap-4">
             <CardTitle>{product.name}</CardTitle>
             <CardDescription>{product.description}</CardDescription>
         </CardContent>
