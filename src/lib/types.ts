@@ -1,13 +1,15 @@
+import { Decimal } from "@prisma/client/runtime/library";
+
 export interface Product {
     id: string;
     name: string;
     description: string;
-    price: number;
+    price: Decimal;
     slug: string;
     images: string[];
     category?: string;
     brand?: string;
-    rating?: number;
+    rating?: Decimal;
     numReviews?: number;
     stock?: number;
     isFeatured?: boolean;
