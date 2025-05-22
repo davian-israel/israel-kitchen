@@ -1,6 +1,6 @@
 import { Product } from "@/lib/types";
 
-export const sampleData: Product[] = [
+export const sampleData: Products[] = [
     {
         id: "1",
         name: 'Polo Sporting Stretch Shirt',
