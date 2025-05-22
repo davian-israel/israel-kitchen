@@ -4,6 +4,7 @@ import ProductCard from "./product-card";
 interface ProductListProps {
     data: Product[];
     title: string;
+    limit?: number;
 }
 
 const ProductList: React.FC<ProductListProps> = ({ data, title }) => {
