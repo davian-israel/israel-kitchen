@@ -3,16 +3,15 @@ import { sampleData } from "./sampleData";
 
 
 
-async function seed(){
-    const prisma = new PrismaClient();
+async function main(){
+  const prisma = new PrismaClient();
+  
   await prisma.product.deleteMany();
   await prisma.review.deleteMany();
 
   
-    await prisma.product.createMany({
-      data: sampleData.products,
-    });
+    await prisma.product.createMany({data: sampleData.products});
     console.log("Database seeded successfully");
   }
-  seed();
+  main();
   
