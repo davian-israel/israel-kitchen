@@ -27,3 +27,48 @@ export const insertProductSchema = z.object({
 export const updateProductSchema = z.object({
     
 })
+
+///schema for signing users in 
+export const signInSchema = z.object({
+    email: z.string().email('Invalid email address'),
+    password: z.string().min(8, 'Password must be at least 8 characters long'),
+});
+
+///schema for signing users up  
+export const signUpSchema = z.object({
+    name: z.string().min(3, 'Name must be at least 3 characters long'),
+    email: z.string().email('Invalid email address'),
+    password: z.string().min(8, 'Password must be at least 8 characters long'),
+}); 
+
+///schema for updating users
+export const updateUserSchema = z.object({
+    name: z.string().min(3, 'Name must be at least 3 characters long'),
+    email: z.string().email('Invalid email address'),
+}); 
+
+///schema for updating users password
+export const updateUserPasswordSchema = z.object({
+    password: z.string().min(8, 'Password must be at least 8 characters long'),
+});  
+
+///schema for updating users role
+export const updateUserRoleSchema = z.object({
+    role: z.string().min(3, 'Role must be at least 3 characters long'),
+});   
+
+///schema for updating users name
+export const updateUserNameSchema = z.object({
+    name: z.string().min(3, 'Name must be at least 3 characters long'),
+});    
+
+///schema for updating users email
+export const updateUserEmailSchema = z.object({
+    email: z.string().email('Invalid email address'),
+});    
+
+
+
+
+
+
