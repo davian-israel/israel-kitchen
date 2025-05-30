@@ -7,7 +7,8 @@ import type nextauthconfig from 'next-auth';
 
 export const config = {
     pages: {
-        signIn: '/login',
+        signIn: '/sign-in',
+        error: '/sign-in'
     },
     session: {
         strategy: 'jwt',
@@ -63,11 +64,17 @@ export const config = {
             //if there is an update,set the user name 
             if (trigger === 'update') {
                 session.user.name = token.name;
-                session.user.email = token.email;
-                session.user.role = token.role;
+             //   session.user.email = token.email;
+             //   session.user.role = token.role;
             }
             return session;
         },
+        async jwt({ token, user, account, profile, trigger, session }: any) {
+            if (trigger === 'update') {
+                token.name = session.user.name;
+            }
+            return token;
+        }
     },
     } satisfies NextAuthConfig;
 

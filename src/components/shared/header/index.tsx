@@ -29,7 +29,7 @@ const Header = () => {
                         </Link>
                     </Button>
                     <Button variant='outline' size='icon'>
-                        <Link href='/login'>
+                        <Link href='/sign-in'>
                             <UserIcon /> Sign in 
                         </Link>
                     </Button>
