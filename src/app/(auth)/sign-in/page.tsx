@@ -30,7 +30,7 @@ const SigninPage = () => {
                   <CredentialsSigninForm />
                 </CardContent>
                 <CardFooter>
-                    <Button className="w-full">Sign in</Button>
+                    {/* <Button className="w-full">Sign in</Button> */}
                 </CardFooter>
             </Card>
         </div>
