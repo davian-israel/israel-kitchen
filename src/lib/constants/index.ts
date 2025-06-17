@@ -7,6 +7,6 @@ export const APP_AUTHOR_URL = process.env.NEXT_PUBLIC_APP_AUTHOR_URL || "https:/
 export const APP_AUTHOR_EMAIL = process.env.NEXT_PUBLIC_APP_AUTHOR_EMAIL || "israel-kitchen@gmail.com";
 export  const LATEST_PRODUCTS_LIMIT = Number(process.env.LATEST_PRODUCTS_LIMIT) || 4;
 export const signInDefaultValues = {
-    email: "",
-    password: "",
+    email: "admin@example.com",
+    password: "letmein123",
 }       
