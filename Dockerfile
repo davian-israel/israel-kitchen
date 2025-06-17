@@ -35,6 +35,11 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/prisma ./prisma
+COPY --from=builder /app/node_modules ./node_modules
+COPY docker-entrypoint.sh ./
+
+# Make the entrypoint script executable
+RUN chmod +x docker-entrypoint.sh
 
 # Set the correct permissions
 RUN chown -R nextjs:nodejs /app
@@ -48,6 +53,9 @@ EXPOSE 3000
 # Set environment variables
 ENV PORT 3000
 ENV HOSTNAME "0.0.0.0"
+
+# Use the entrypoint script
+ENTRYPOINT ["./docker-entrypoint.sh"]
 
 # Start the application
 CMD ["node", "server.js"] 
