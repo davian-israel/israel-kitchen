@@ -2,7 +2,7 @@
 
 import { signInSchema } from "../validators";
 import {signIn, signOut} from "@/auth";
-import { isRedirectError } from "next/dist/client/components/redirect";
+import { getRedirectError } from "next/dist/client/components/redirect";
 
 
 
@@ -20,7 +20,7 @@ export async function signInWithCredentials (
     return {success: true, message:  "Signed in successfully"};
 
 }catch (error){
-    if(isRedirectError(error)){
+    if(getRedirectError('push', error as any)){
         throw error;
     }
     
