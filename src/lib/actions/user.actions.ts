@@ -7,7 +7,9 @@ import { isRedirectError } from "next/dist/client/components/redirect";
 
 
 //sign in user with credentials
-export async function signInWithCredentials (formData: FormData){
+export async function signInWithCredentials (
+    prevState: { success: boolean; message: string },
+    formData: FormData){
    try {
      const validatedFields = signInSchema.safeParse({
         email: formData.get('email'),
