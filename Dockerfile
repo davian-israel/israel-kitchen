@@ -26,7 +26,7 @@ RUN npx next build --no-lint
 FROM node:20-alpine AS runner
 WORKDIR /app
 
-ENV NODE_ENV production
+ENV NODE_ENV=production
 
 # Create a non-root user
 RUN addgroup --system --gid 1001 nodejs
@@ -53,8 +53,8 @@ USER nextjs
 EXPOSE 3000
 
 # Set environment variables
-ENV PORT 3000
-ENV HOSTNAME "0.0.0.0"
+ENV PORT=3000
+ENV HOSTNAME="0.0.0.0"
 
 # Use the entrypoint script
 ENTRYPOINT ["./docker-entrypoint.sh"]
