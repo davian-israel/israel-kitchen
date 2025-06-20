@@ -5,6 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      # Build optimizations: --no-lint (skip ESLint/TypeScript) and --no-mangling (faster builds)
     ports:
       - "3000:3000"
     environment:

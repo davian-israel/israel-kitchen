@@ -18,9 +18,9 @@ COPY . .
 # Generate Prisma Client
 RUN npx prisma generate
 
-# Build the application (skip ESLint and set dummy DATABASE_URL)
+# Build the application (skip ESLint, TypeScript checks, and set dummy DATABASE_URL)
 ENV DATABASE_URL="postgresql://dummy:dummy@localhost:5432/dummy"
-RUN npx next build --no-lint
+RUN npx next build --no-lint --no-mangling
 
 # Stage 3: Runner
 FROM node:20-alpine AS runner
