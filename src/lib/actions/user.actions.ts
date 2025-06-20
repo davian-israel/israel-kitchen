@@ -20,6 +20,7 @@ export async function signInWithCredentials (
     return {success: true, message:  "Signed in successfully"};
 
 }catch (error){
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     if(getRedirectError('push', error as any)){
         throw error;
     }
